@@ -1,0 +1,9 @@
+[submodule "logic/papero"]
+	path = logic/papero
+	url = git@github.com:PerugiaOverNetDAQ/papero.git
+[submodule "logic/msdintf"]
+	path = logic/msdintf
+	url = git@github.com:PerugiaOverNetDAQ/msdintf.git
+[submodule "Hog"]
+	path = Hog
+	url = https://gitlab.cern.ch/hog/Hog.git

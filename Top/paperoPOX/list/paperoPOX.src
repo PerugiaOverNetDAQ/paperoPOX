@@ -1,0 +1,64 @@
+#Top: Hog searches for the top file with name format top_<project>.vhd
+logic/top_paperoPOX.vhd
+
+#Project-specific
+logic/DetectorInterface.vhd
+logic/priorityEncoder.vhd
+
+#Project-specific packages to override papero and msdintf defaults
+logic/FOOTpackage.vhd
+logic/paperoPackage.vhd 08
+
+
+###############################################################################
+#PAPERO generic
+logic/papero/logic/registerArray.vhd 08
+logic/papero/logic/Config_Receiver.vhd
+logic/papero/logic/WR_Timer.vhd
+logic/papero/logic/hkReader.vhd
+logic/papero/logic/HPS_intf.vhd
+logic/papero/logic/Test_Unit.vhd
+logic/papero/logic/FastData_Transmitter.vhd
+logic/papero/logic/trigBusyLogic.vhd
+logic/papero/logic/TdaqModule.vhd
+logic/papero/logic/metaDataFifo.vhd
+
+#Packages
+logic/papero/logic/intel_package.vhd
+logic/papero/logic/basic_functions/basic_package.vhd
+
+#Basic functions
+logic/papero/logic/basic_functions/sync_stage.vhd
+logic/papero/logic/basic_functions/sync_edge.vhd
+logic/papero/logic/basic_functions/shift_register.vhd
+logic/papero/logic/basic_functions/pulse_generator.vhd
+logic/papero/logic/basic_functions/parametric_fifo_synch.vhd
+logic/papero/logic/basic_functions/parametric_fifo_dp.vhd
+logic/papero/logic/basic_functions/edge_detector.vhd
+logic/papero/logic/basic_functions/edge_detector_2.vhd
+logic/papero/logic/basic_functions/delay_timer.vhd
+logic/papero/logic/basic_functions/counter.vhd
+logic/papero/logic/basic_functions/clock_divider.vhd
+logic/papero/logic/basic_functions/clock_divider_2.vhd
+logic/papero/logic/basic_functions/CRC32.vhd
+logic/papero/logic/basic_functions/PRBS8.vhd
+logic/papero/logic/basic_functions/PRBS32.vhd
+logic/papero/logic/basic_functions/HighHold.vhd
+
+#Qsys IPs: regenerate the IP for each new build
+#Add the qip if you want to generate it only once
+logic/papero/ip/soc_system/soc_system.qsys noadd --synthesis=VHDL
+
+#Other IPs
+logic/papero/ip/edge_detect/altera_edge_detector.v
+logic/papero/ip/debounce/debounce.v
+logic/papero/ip/altsource_probe/hps_reset.qip
+
+
+###############################################################################
+#msdintf
+logic/msdintf/FE_interface.vhd
+logic/msdintf/multiADC_interface.vhd
+logic/msdintf/multiAdcPlaneInterface.vhd
+#logic/msdintf/Data_Builder.vhd
+#logic/msdintf/Data_Builder_Top.vhd
